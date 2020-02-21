@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Door_halls.ma
-//Last modified: Thu, Feb 20, 2020 04:20:39 PM
+//Last modified: Thu, Feb 20, 2020 05:59:06 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
@@ -16,8 +16,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "018A6A75-40E4-BD85-B56B-408E979CB95D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -11.630301037851732 8.3305657283604813 4.2943070224030615 ;
-	setAttr ".r" -type "double3" -24.938352201350217 -12304.99999999729 0 ;
+	setAttr ".t" -type "double3" 15.893576197337207 8.2083186866754527 -15.392098470880901 ;
+	setAttr ".r" -type "double3" -14.138352202003118 -12106.200000000586 0 ;
 	setAttr ".rp" -type "double3" 0 -2.8421709430404008e-16 5.6843418860808016e-16 ;
 	setAttr ".rpt" -type "double3" 5.9472186695596512e-16 2.9944839107012498e-16 -3.4489293506325292e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -27,12 +27,12 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.011000000000000001;
 	setAttr ".fcp" 1000;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 13.731429363596108;
+	setAttr ".coi" 23.202389177162999;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -34.57376226045551 254.08064555423277 -96.777131771221448 ;
+	setAttr ".tp" -type "double3" -34.571086716874561 254.08065257249848 18.081792491918122 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -94,7 +94,7 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Door1:Airlock_entrance:pCube1222";
+createNode transform -n "Lower_left";
 	rename -uid "320D751E-4516-4009-00EE-23931D15E572";
 	setAttr ".t" -type "double3" 847.83752783770456 0.089201831798173106 -2.7707154474306481 ;
 	setAttr ".r" -type "double3" 0 88.455071718316987 0 ;
@@ -103,7 +103,7 @@ createNode transform -n "Door1:Airlock_entrance:pCube1222";
 	setAttr ".rpt" -type "double3" -822.96858527771872 0 849.7768371253419 ;
 	setAttr ".sp" -type "double3" -0.49398686489387544 0.024827327776561839 -16.736389989071341 ;
 	setAttr ".spt" -type "double3" -24.524150873260748 1.2325613805604017 -830.88394112238905 ;
-createNode mesh -n "Door1:Airlock_entrance:pCube1222Shape" -p "Door1:Airlock_entrance:pCube1222";
+createNode mesh -n "Lower_leftShape" -p "Lower_left";
 	rename -uid "68F21A37-4EF0-972F-4520-CD9A80262A84";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:61]";
@@ -342,7 +342,7 @@ createNode mesh -n "Door1:Airlock_entrance:pCube1222Shape" -p "Door1:Airlock_ent
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "Door1:Airlock_entrance:pCube1225";
+createNode transform -n "Lower_right";
 	rename -uid "24C1E2D2-4D4E-DD95-05F0-B1B09AA7267E";
 	setAttr ".t" -type "double3" 847.83752783770456 0.089201831798173106 -2.7707154474306481 ;
 	setAttr ".r" -type "double3" 0 88.455071718316987 0 ;
@@ -351,7 +351,7 @@ createNode transform -n "Door1:Airlock_entrance:pCube1225";
 	setAttr ".rpt" -type "double3" -821.42676739556828 0 851.36079946311042 ;
 	setAttr ".sp" -type "double3" -0.52527381082555846 0.024827327776561839 -16.736389989071341 ;
 	setAttr ".spt" -type "double3" -26.077402258916482 1.2325613805604017 -830.88394112238905 ;
-createNode mesh -n "Door1:Airlock_entrance:pCube1225Shape" -p "Door1:Airlock_entrance:pCube1225";
+createNode mesh -n "Lower_rightShape" -p "Lower_right";
 	rename -uid "B62CB6F5-4A90-CEB0-131F-9B9039A3B5B9";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:61]";
@@ -590,7 +590,7 @@ createNode mesh -n "Door1:Airlock_entrance:pCube1225Shape" -p "Door1:Airlock_ent
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "Door1:Airlock_entrance:pCube1224";
+createNode transform -n "Frame";
 	rename -uid "398CFEA0-4CB0-04B0-2EED-1FA172C62188";
 	setAttr ".t" -type "double3" 847.83752783770456 0.089201831798173106 -2.7707154474306481 ;
 	setAttr ".r" -type "double3" 0 88.455071718316987 0 ;
@@ -599,7 +599,7 @@ createNode transform -n "Door1:Airlock_entrance:pCube1224";
 	setAttr ".rpt" -type "double3" -822.36509273895365 0 850.74689835526476 ;
 	setAttr ".sp" -type "double3" -0.50978367223220444 0.048407299324911064 -16.739846107612845 ;
 	setAttr ".spt" -type "double3" -25.308388904699576 2.4031973244192435 -831.05552133751462 ;
-createNode mesh -n "Door1:Airlock_entrance:pCube1224Shape" -p "Door1:Airlock_entrance:pCube1224";
+createNode mesh -n "FrameShape" -p "Frame";
 	rename -uid "B9E44EB2-4E4E-6A55-105B-8A8650C6A8B0";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:105]";
@@ -980,7 +980,7 @@ createNode mesh -n "Door1:Airlock_entrance:pCube1224Shape" -p "Door1:Airlock_ent
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "Door1:Airlock_entrance:pCube1223";
+createNode transform -n "Top_peice";
 	rename -uid "E2B546B6-4451-3BF9-337E-C38625F7F371";
 	setAttr ".t" -type "double3" 847.83752783770456 0.089201831798173106 -2.7707154474306481 ;
 	setAttr ".r" -type "double3" 0 88.455071718316987 0 ;
@@ -989,7 +989,7 @@ createNode transform -n "Door1:Airlock_entrance:pCube1223";
 	setAttr ".rpt" -type "double3" -822.17094068918937 0 850.52749179594264 ;
 	setAttr ".sp" -type "double3" -0.50947513624533858 0.058262828468798315 -16.735710825586779 ;
 	setAttr ".spt" -type "double3" -25.293071527600176 2.8924785196033174 -830.85022381339422 ;
-createNode mesh -n "Door1:Airlock_entrance:pCube1223Shape" -p "Door1:Airlock_entrance:pCube1223";
+createNode mesh -n "Top_peiceShape" -p "Top_peice";
 	rename -uid "2FD2FAB6-49D7-D1FA-AE28-9A8DDE20E108";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:80]";
@@ -1623,9 +1623,87 @@ createNode groupId -n "Door1:Airlock_entrance:groupId2188";
 createNode groupId -n "Door1:Airlock_entrance:groupId2189";
 	rename -uid "58FD1D37-4FC2-01BD-7CC2-079C4A77C657";
 	setAttr ".ihi" 0;
+createNode animCurveTL -n "Top_peice_translateY";
+	rename -uid "15FB340E-4EF2-1723-806B-66ACD9FBA12E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.089201831798173106 5 0.20974982830796282
+		 10 0.74380677850336574 15 1.1221005622955866 25 1.1221005622955866 35 0.23925580263020338
+		 40 0.089201831798173106;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
+createNode animCurveTL -n "Lower_left_translateY";
+	rename -uid "1614748D-4377-7E15-345D-9BAA9931478D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.089201831798173106 5 0.089201831798173106
+		 10 0.089201831798173106 15 0.089201831798173106 25 0.089201831798173106 35 0.089201831798173106
+		 40 0.089201831798173106;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
+createNode animCurveTL -n "Lower_right_translateY";
+	rename -uid "4EB6F347-4AD7-591C-577A-B5B0764E18C5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.089201831798173106 5 0.089201831798173106
+		 10 0.089201831798173106 15 0.089201831798173106 25 0.089201831798173106 35 0.089201831798173106
+		 40 0.089201831798173106;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
+createNode animCurveTL -n "Top_peice_translateZ";
+	rename -uid "56EB5ACA-4035-7FB2-49C6-0B814813BCBE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -2.7707154474306481 5 -2.7707154474306481
+		 10 -2.7707154474306481 15 -2.7707154474306481 25 -2.7707154474306481 35 -2.7707154474306481
+		 40 -2.7707154474306481;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
+createNode animCurveTL -n "Lower_left_translateZ";
+	rename -uid "FF2A119F-40A2-FB24-0659-D4A96FBDBC75";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -2.7707154474306481 5 -2.7707154474306481
+		 10 -3.8146662199464103 15 -4.0992689616746487 25 -4.0992689616746487 35 -2.9274472969298126
+		 40 -2.7707154474306481;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
+createNode animCurveTL -n "Lower_right_translateZ";
+	rename -uid "4D881A6F-453F-3A14-98D8-C0ABFE71C76C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -2.7707154474306481 5 -2.7477564100726903
+		 10 -1.6763443902495885 15 -1.4717936269350855 25 -1.4717936269350855 35 -2.5797367679656458
+		 40 -2.7707154474306481;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 48;
+	setAttr ".unw" 48;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1663,22 +1741,23 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "Door1:Airlock_entrance:groupId2186.id" "Door1:Airlock_entrance:pCube1222Shape.iog.og[0].gid"
+connectAttr "Lower_left_translateY.o" "Lower_left.ty";
+connectAttr "Lower_left_translateZ.o" "Lower_left.tz";
+connectAttr "Door1:Airlock_entrance:groupId2186.id" "Lower_leftShape.iog.og[0].gid"
 		;
-connectAttr ":initialShadingGroup.mwc" "Door1:Airlock_entrance:pCube1222Shape.iog.og[0].gco"
+connectAttr ":initialShadingGroup.mwc" "Lower_leftShape.iog.og[0].gco";
+connectAttr "Lower_right_translateY.o" "Lower_right.ty";
+connectAttr "Lower_right_translateZ.o" "Lower_right.tz";
+connectAttr "Door1:Airlock_entrance:groupId2187.id" "Lower_rightShape.iog.og[0].gid"
 		;
-connectAttr "Door1:Airlock_entrance:groupId2187.id" "Door1:Airlock_entrance:pCube1225Shape.iog.og[0].gid"
+connectAttr ":initialShadingGroup.mwc" "Lower_rightShape.iog.og[0].gco";
+connectAttr "Door1:Airlock_entrance:groupId2188.id" "FrameShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "FrameShape.iog.og[0].gco";
+connectAttr "Top_peice_translateY.o" "Top_peice.ty";
+connectAttr "Top_peice_translateZ.o" "Top_peice.tz";
+connectAttr "Door1:Airlock_entrance:groupId2189.id" "Top_peiceShape.iog.og[0].gid"
 		;
-connectAttr ":initialShadingGroup.mwc" "Door1:Airlock_entrance:pCube1225Shape.iog.og[0].gco"
-		;
-connectAttr "Door1:Airlock_entrance:groupId2188.id" "Door1:Airlock_entrance:pCube1224Shape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "Door1:Airlock_entrance:pCube1224Shape.iog.og[0].gco"
-		;
-connectAttr "Door1:Airlock_entrance:groupId2189.id" "Door1:Airlock_entrance:pCube1223Shape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "Door1:Airlock_entrance:pCube1223Shape.iog.og[0].gco"
-		;
+connectAttr ":initialShadingGroup.mwc" "Top_peiceShape.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "polySurface1106SG.message" ":defaultLightSet.message";
@@ -2004,14 +2083,10 @@ connectAttr "Door1:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Door1:Airlock_entrance:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Door1:file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Door:file1.oc" ":lambert1.c";
-connectAttr "Door1:Airlock_entrance:pCube1222Shape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "Door1:Airlock_entrance:pCube1225Shape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "Door1:Airlock_entrance:pCube1224Shape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "Door1:Airlock_entrance:pCube1223Shape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
+connectAttr "Lower_leftShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "Lower_rightShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "FrameShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "Top_peiceShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "Door1:Airlock_entrance:groupId2186.msg" ":initialShadingGroup.gn" -na
 		;
 connectAttr "Door1:Airlock_entrance:groupId2187.msg" ":initialShadingGroup.gn" -na
